@@ -166,11 +166,20 @@ const App = () => {
       page = <Landing t={t} navigate={navigate} onAdd={addToCart} heroVariant={tweaks.heroVariant} />;
   }
 
+  const [searchOpen, setSearchOpen] = React.useState(false);
+
+  // Bloquear scroll cuando el buscador está abierto
+  React.useEffect(() => {
+    document.body.classList.toggle("no-scroll", searchOpen);
+    return () => document.body.classList.remove("no-scroll");
+  }, [searchOpen]);
+
   return (
     <>
       {splash && <SplashScreen onDone={() => setSplash(false)} />}
+      {searchOpen && <SearchOverlay navigate={navigate} onClose={() => setSearchOpen(false)} />}
       <Ticker items={t.ticker} />
-      <Nav route={route} navigate={navigate} lang={lang} setLang={setLang} cartCount={cartCount} t={t} />
+      <Nav route={route} navigate={navigate} lang={lang} setLang={setLang} cartCount={cartCount} t={t} onSearchOpen={() => setSearchOpen(true)} />
       <main>{page}</main>
       <Footer t={t} />
       <AddedToast poster={toast} />

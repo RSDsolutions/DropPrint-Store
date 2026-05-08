@@ -49,7 +49,126 @@ const Ticker = ({ items }) => {
 };
 window.Ticker = Ticker;
 
-const Nav = ({ route, navigate, lang, setLang, cartCount, t }) => {
+/* ─── Search Overlay ─────────────────────────────────────── */
+const SearchOverlay = ({ onClose, navigate }) => {
+  const [q, setQ] = React.useState("");
+  const inputRef = React.useRef(null);
+  const posters = window.HM_DATA.posters;
+
+  // Auto-focus al abrir
+  React.useEffect(() => {
+    setTimeout(() => inputRef.current?.focus(), 60);
+    // Cerrar con Escape
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const results = q.trim().length === 0 ? [] :
+    posters.filter(p =>
+      [p.title, p.artist, p.genre].some(f =>
+        f.toLowerCase().includes(q.toLowerCase())
+      )
+    );
+
+  const handleSelect = (p) => {
+    navigate("product", p.id);
+    onClose();
+  };
+
+  // Artistas sugeridos cuando no hay query
+  const suggested = posters.slice(0, 6);
+
+  return (
+    <div className="search-overlay" onClick={onClose}>
+      <div className="search-modal" onClick={e => e.stopPropagation()}>
+        {/* Input */}
+        <div className="search-input-wrap">
+          <Icon.Search style={{ color: "var(--muted)", flexShrink: 0 }} />
+          <input
+            ref={inputRef}
+            className="search-input"
+            placeholder="Buscar artista, álbum, género…"
+            value={q}
+            onChange={e => setQ(e.target.value)}
+            autoComplete="off"
+          />
+          {q && (
+            <button className="search-clear" onClick={() => { setQ(""); inputRef.current?.focus(); }}>
+              <Icon.X />
+            </button>
+          )}
+          <button className="search-esc-btn" onClick={onClose}>ESC</button>
+        </div>
+
+        {/* Resultados */}
+        <div className="search-body">
+          {q.trim() === "" ? (
+            <>
+              <div className="search-section-label">Populares</div>
+              <div className="search-suggestions">
+                {["Bad Bunny", "Rosalía", "Karol G", "The Weeknd", "Quevedo", "Anuel AA"].map(a => (
+                  <button key={a} className="search-tag"
+                    onClick={() => setQ(a)}>
+                    <Icon.Search style={{ width: 12, height: 12 }} /> {a}
+                  </button>
+                ))}
+              </div>
+              <div className="search-section-label" style={{ marginTop: 24 }}>Destacados</div>
+              <div className="search-results">
+                {suggested.map(p => (
+                  <button key={p.id} className="search-result-item" onClick={() => handleSelect(p)}>
+                    <div className="search-result-thumb">
+                      <Poster poster={p} size={48} />
+                    </div>
+                    <div className="search-result-info">
+                      <div className="search-result-title">{p.title}</div>
+                      <div className="search-result-sub">{p.artist} · {p.genre}</div>
+                    </div>
+                    <div className="search-result-price">${p.price.toFixed(2)}</div>
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : results.length > 0 ? (
+            <>
+              <div className="search-section-label">{results.length} resultado{results.length !== 1 ? "s" : ""} para "{q}"</div>
+              <div className="search-results">
+                {results.map(p => (
+                  <button key={p.id} className="search-result-item" onClick={() => handleSelect(p)}>
+                    <div className="search-result-thumb">
+                      <Poster poster={p} size={48} />
+                    </div>
+                    <div className="search-result-info">
+                      <div className="search-result-title">{p.title}</div>
+                      <div className="search-result-sub">{p.artist} · {p.genre} · {p.year}</div>
+                    </div>
+                    <div className="search-result-price">${p.price.toFixed(2)}</div>
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="search-empty">
+              <div style={{ fontSize: 40, marginBottom: 12 }}>🔍</div>
+              <div style={{ fontWeight: 500, marginBottom: 6 }}>Sin resultados para "{q}"</div>
+              <div style={{ color: "var(--muted)", fontSize: 13 }}>Prueba con otro artista o álbum</div>
+            </div>
+          )}
+        </div>
+
+        {/* Footer hint */}
+        <div className="search-footer">
+          <span><kbd>↵</kbd> seleccionar</span>
+          <span><kbd>ESC</kbd> cerrar</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+window.SearchOverlay = SearchOverlay;
+
+const Nav = ({ route, navigate, lang, setLang, cartCount, t, onSearchOpen }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
 
@@ -108,7 +227,7 @@ const Nav = ({ route, navigate, lang, setLang, cartCount, t }) => {
               <button className={lang === "es" ? "on" : ""} onClick={() => setLang("es")}>ES</button>
               <button className={lang === "en" ? "on" : ""} onClick={() => setLang("en")}>EN</button>
             </div>
-            <button className="icon-btn nav-search-btn" aria-label="Search"><Icon.Search /></button>
+            <button className="icon-btn nav-search-btn" aria-label="Search" onClick={onSearchOpen}><Icon.Search /></button>
             <button className="icon-btn nav-account-btn" aria-label="Account"><Icon.User /></button>
             <button className="icon-btn" aria-label="Cart" onClick={() => navigate("cart")}>
               <Icon.Bag />
