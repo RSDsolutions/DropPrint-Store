@@ -84,7 +84,7 @@ section { padding: 120px 0; position: relative; }
 .nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.6); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-bottom: 1px solid transparent; transition: border-color .25s ease, background .25s ease; }
 .nav.scrolled { border-bottom-color: var(--border); background: rgba(10,10,10,0.88); }
 .nav-row { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
-.nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; font-size: 16px; }
+.nav-logo { display: flex; align-items: center; cursor: pointer; }
 .nav-logo .mark { width: 32px; height: 32px; border-radius: 8px; background: var(--accent); display: grid; place-items: center; color: white; font-weight: 800; font-size: 14px; box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 8px 20px -8px var(--accent-glow); }
 .nav-links { display: flex; gap: 4px; align-items: center; }
 .nav-link { padding: 8px 14px; border-radius: 999px; font-size: 14px; color: var(--text-2); position: relative; transition: color .2s ease, background .2s ease; cursor: pointer; }

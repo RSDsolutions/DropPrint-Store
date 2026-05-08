@@ -20,17 +20,19 @@ const Icon = {
 };
 window.Icon = Icon;
 
-const Logo = ({ size = 32 }) => (
-  <div className="nav-logo">
-    <div className="mark" style={{ width: size, height: size }}>
-      <svg width={size * 0.55} height={size * 0.55} viewBox="0 0 32 32" fill="none">
-        <path d="M8 6c4-3 8 0 8 5v15M16 11c4-3 8 0 8 5v10" stroke="white" strokeWidth="3" strokeLinecap="round" />
-      </svg>
-    </div>
-    <span style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
-      <span style={{ fontSize: 14, letterSpacing: "-0.01em" }}>Hype Music</span>
-      <span style={{ fontSize: 9, fontFamily: "'JetBrains Mono', monospace", letterSpacing: "0.18em", color: "var(--muted)", marginTop: 3 }}>PRINTS</span>
-    </span>
+const Logo = ({ size = 40 }) => (
+  <div className="nav-logo" style={{ gap: 0 }}>
+    <img
+      src="assets/hype-logo.png"
+      alt="Hype Music Prints"
+      style={{
+        height: size,
+        width: "auto",
+        mixBlendMode: "screen",
+        imageRendering: "auto",
+        display: "block",
+      }}
+    />
   </div>
 );
 window.Logo = Logo;
