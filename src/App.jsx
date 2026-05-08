@@ -1,6 +1,43 @@
 // App.jsx — root: routing, tweaks, state
 const { useState, useEffect, useMemo } = React;
 
+/* ─── Splash Screen ─────────────────────────────────────── */
+const SplashScreen = ({ onDone }) => {
+  const [phase, setPhase] = React.useState("in"); // "in" | "hold" | "out"
+
+  React.useEffect(() => {
+    // Entrada rápida → hold → fade out
+    const t1 = setTimeout(() => setPhase("out"), 1500);
+    const t2 = setTimeout(() => onDone(), 1900); // llama onDone cuando termina fade
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
+
+  return (
+    <div className={`splash ${phase === "out" ? "splash-out" : ""}`}>
+      {/* Glows de fondo */}
+      <div className="splash-glow splash-glow-1" />
+      <div className="splash-glow splash-glow-2" />
+
+      {/* Contenido central */}
+      <div className="splash-content">
+        <div className="splash-logo">
+          <img src="assets/hype-logo.png" alt="Hype Music Prints" />
+        </div>
+        <div className="splash-bar-wrap">
+          <div className="splash-bar" />
+        </div>
+        <div className="splash-label">Cargando experiencia…</div>
+      </div>
+
+      {/* Partículas flotantes decorativas */}
+      {[...Array(6)].map((_, i) => (
+        <div key={i} className={`splash-dot splash-dot-${i + 1}`} />
+      ))}
+    </div>
+  );
+};
+
+
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "heroVariant": "collage",
   "lang": "es",
@@ -77,6 +114,7 @@ const AddedToast = ({ poster }) => poster ? (
 const App = () => {
   const [tweaks, setTweak] = window.useTweaks(TWEAK_DEFAULTS);
   const [{ route, arg }, navigate] = useHashRoute();
+  const [splash, setSplash] = React.useState(true);
   const [cart, setCart] = useState(() => {
     try { return JSON.parse(localStorage.getItem("hype-cart") || "[]"); } catch { return []; }
   });
@@ -130,6 +168,7 @@ const App = () => {
 
   return (
     <>
+      {splash && <SplashScreen onDone={() => setSplash(false)} />}
       <Ticker items={t.ticker} />
       <Nav route={route} navigate={navigate} lang={lang} setLang={setLang} cartCount={cartCount} t={t} />
       <main>{page}</main>
