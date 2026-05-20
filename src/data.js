@@ -1,24 +1,24 @@
-// Hype Music Prints — mock catalog data
+// DropPrint Store — mock catalog data (plantilla)
 // Posters are rendered as styled SVG/div compositions, not external images.
 
 window.HM_DATA = (function () {
   const posters = [
-    { id: "un-verano-sin-ti", title: "Un Verano Sin Ti", artist: "Bad Bunny", year: 2022, price: 3.18, was: 4.79, rating: 5.0, reviews: 412, genre: "Reggaetón", style: "tropical", palette: ["#ffd166", "#ef476f", "#06d6a0", "#1d3557"], badge: "TOP" },
-    { id: "easy-money-baby", title: "Easy Money Baby", artist: "Myke Towers", year: 2020, price: 3.18, was: 4.79, rating: 4.9, reviews: 220, genre: "Rap Latino", style: "noir", palette: ["#0b132b", "#1c2541", "#3a506b", "#5bc0be"], badge: "BEST" },
-    { id: "real-hasta-la-muerte", title: "Real Hasta La Muerte", artist: "Anuel AA", year: 2018, price: 3.18, was: 4.79, rating: 4.8, reviews: 187, genre: "Trap", style: "shadow", palette: ["#0a0a0a", "#222", "#d90d2b", "#edf2f4"], badge: null },
-    { id: "ameri", title: "Ameri", artist: "Duki", year: 2024, price: 3.18, was: 4.79, rating: 5.0, reviews: 96, genre: "Trap", style: "abstract", palette: ["#2d3047", "#93b7be", "#e0ca3c", "#a799b7"], badge: null },
-    { id: "buenas-noches", title: "Buenas Noches", artist: "Quevedo", year: 2024, price: 3.18, was: 4.79, rating: 5.0, reviews: 142, genre: "Reggaetón", style: "portrait", palette: ["#1a1a1a", "#3d348b", "#7678ed", "#f7b801"], badge: "NEW" },
-    { id: "lux", title: "LUX", artist: "Rosalía", year: 2025, price: 3.18, was: 4.79, rating: 4.9, reviews: 311, genre: "Pop Latino", style: "minimal", palette: ["#edf2f4", "#8d99ae", "#2b2d42", "#ef233c"], badge: null },
-    { id: "starboy", title: "Starboy", artist: "The Weeknd", year: 2016, price: 3.18, was: 4.79, rating: 4.9, reviews: 530, genre: "R&B", style: "neon", palette: ["#0a0a0a", "#d90d2b", "#edf2f4", "#1a1a1a"], badge: null },
-    { id: "anti", title: "ANTI", artist: "Rihanna", year: 2016, price: 3.18, was: 4.79, rating: 5.0, reviews: 401, genre: "R&B", style: "redblock", palette: ["#a4161a", "#660708", "#0b090a", "#f5f3f4"], badge: "NEW" },
-    { id: "donde-quiero-estar", title: "Donde Quiero Estar", artist: "Quevedo", year: 2023, price: 3.18, was: 4.79, rating: 5.0, reviews: 198, genre: "Reggaetón", style: "sky", palette: ["#a8dadc", "#457b9d", "#1d3557", "#f1faee"], badge: null },
-    { id: "turr4zo", title: "TURR4ZO", artist: "Trueno", year: 2024, price: 3.18, was: 4.79, rating: 4.8, reviews: 87, genre: "Rap Latino", style: "industrial", palette: ["#0a0a0a", "#444", "#d90d2b", "#edf2f4"], badge: null },
-    { id: "cosa-nuestra", title: "Cosa Nuestra", artist: "Rauw Alejandro", year: 2024, price: 3.18, was: 4.79, rating: 4.9, reviews: 154, genre: "Pop Latino", style: "vintage", palette: ["#7c5e3c", "#d4a373", "#e9edc9", "#1a1a1a"], badge: null },
-    { id: "3men2-kbrn", title: "3MEN2 KBRN", artist: "Eladio Carrión", year: 2023, price: 3.18, was: 4.79, rating: 4.7, reviews: 71, genre: "Trap", style: "shadow", palette: ["#0a0a0a", "#1a1a1a", "#d90d2b", "#8d99ae"], badge: null },
-    { id: "mañana-sera-bonito", title: "Mañana Será Bonito", artist: "Karol G", year: 2023, price: 3.18, was: 4.79, rating: 5.0, reviews: 289, genre: "Reggaetón", style: "scrapbook", palette: ["#ff7aa2", "#ffd166", "#06aed5", "#edf2f4"], badge: null },
-    { id: "love-on", title: "Lover", artist: "Taylor Swift", year: 2019, price: 3.18, was: 4.79, rating: 4.9, reviews: 612, genre: "Pop", style: "pastel", palette: ["#ffafcc", "#bde0fe", "#cdb4db", "#edf2f4"], badge: null },
-    { id: "el-baifo", title: "EL BAIFO", artist: "Quevedo", year: 2024, price: 3.18, was: 4.79, rating: 4.8, reviews: 110, genre: "Reggaetón", style: "geometric", palette: ["#1a1a3e", "#e63946", "#f4a261", "#2a9d8f"], badge: null },
-    { id: "el-mal-querer", title: "El Mal Querer", artist: "Rosalía", year: 2018, price: 3.18, was: 4.79, rating: 5.0, reviews: 256, genre: "Pop Latino", style: "minimal", palette: ["#edf2f4", "#1a1a1a", "#d90d2b", "#8d99ae"], badge: null },
+    { id: "un-verano-sin-ti", title: "Un Verano Sin Ti", artist: "Bad Bunny", year: 2022, price: 9.99, was: 14.99, rating: 5.0, reviews: 412, genre: "Reggaetón", style: "tropical", palette: ["#ffd166", "#ef476f", "#06d6a0", "#1d3557"], badge: "TOP" },
+    { id: "easy-money-baby", title: "Easy Money Baby", artist: "Myke Towers", year: 2020, price: 9.99, was: 14.99, rating: 4.9, reviews: 220, genre: "Rap Latino", style: "noir", palette: ["#0b132b", "#1c2541", "#3a506b", "#5bc0be"], badge: "BEST" },
+    { id: "real-hasta-la-muerte", title: "Real Hasta La Muerte", artist: "Anuel AA", year: 2018, price: 9.99, was: 14.99, rating: 4.8, reviews: 187, genre: "Trap", style: "shadow", palette: ["#0a0a0a", "#222", "#d90d2b", "#edf2f4"], badge: null },
+    { id: "ameri", title: "Ameri", artist: "Duki", year: 2024, price: 9.99, was: 14.99, rating: 5.0, reviews: 96, genre: "Trap", style: "abstract", palette: ["#2d3047", "#93b7be", "#e0ca3c", "#a799b7"], badge: null },
+    { id: "buenas-noches", title: "Buenas Noches", artist: "Quevedo", year: 2024, price: 9.99, was: 14.99, rating: 5.0, reviews: 142, genre: "Reggaetón", style: "portrait", palette: ["#1a1a1a", "#3d348b", "#7678ed", "#f7b801"], badge: "NEW" },
+    { id: "lux", title: "LUX", artist: "Rosalía", year: 2025, price: 9.99, was: 14.99, rating: 4.9, reviews: 311, genre: "Pop Latino", style: "minimal", palette: ["#edf2f4", "#8d99ae", "#2b2d42", "#ef233c"], badge: null },
+    { id: "starboy", title: "Starboy", artist: "The Weeknd", year: 2016, price: 9.99, was: 14.99, rating: 4.9, reviews: 530, genre: "R&B", style: "neon", palette: ["#0a0a0a", "#d90d2b", "#edf2f4", "#1a1a1a"], badge: null },
+    { id: "anti", title: "ANTI", artist: "Rihanna", year: 2016, price: 9.99, was: 14.99, rating: 5.0, reviews: 401, genre: "R&B", style: "redblock", palette: ["#a4161a", "#660708", "#0b090a", "#f5f3f4"], badge: "NEW" },
+    { id: "donde-quiero-estar", title: "Donde Quiero Estar", artist: "Quevedo", year: 2023, price: 9.99, was: 14.99, rating: 5.0, reviews: 198, genre: "Reggaetón", style: "sky", palette: ["#a8dadc", "#457b9d", "#1d3557", "#f1faee"], badge: null },
+    { id: "turr4zo", title: "TURR4ZO", artist: "Trueno", year: 2024, price: 9.99, was: 14.99, rating: 4.8, reviews: 87, genre: "Rap Latino", style: "industrial", palette: ["#0a0a0a", "#444", "#d90d2b", "#edf2f4"], badge: null },
+    { id: "cosa-nuestra", title: "Cosa Nuestra", artist: "Rauw Alejandro", year: 2024, price: 9.99, was: 14.99, rating: 4.9, reviews: 154, genre: "Pop Latino", style: "vintage", palette: ["#7c5e3c", "#d4a373", "#e9edc9", "#1a1a1a"], badge: null },
+    { id: "3men2-kbrn", title: "3MEN2 KBRN", artist: "Eladio Carrión", year: 2023, price: 9.99, was: 14.99, rating: 4.7, reviews: 71, genre: "Trap", style: "shadow", palette: ["#0a0a0a", "#1a1a1a", "#d90d2b", "#8d99ae"], badge: null },
+    { id: "mañana-sera-bonito", title: "Mañana Será Bonito", artist: "Karol G", year: 2023, price: 9.99, was: 14.99, rating: 5.0, reviews: 289, genre: "Reggaetón", style: "scrapbook", palette: ["#ff7aa2", "#ffd166", "#06aed5", "#edf2f4"], badge: null },
+    { id: "love-on", title: "Lover", artist: "Taylor Swift", year: 2019, price: 9.99, was: 14.99, rating: 4.9, reviews: 612, genre: "Pop", style: "pastel", palette: ["#ffafcc", "#bde0fe", "#cdb4db", "#edf2f4"], badge: null },
+    { id: "el-baifo", title: "EL BAIFO", artist: "Quevedo", year: 2024, price: 9.99, was: 14.99, rating: 4.8, reviews: 110, genre: "Reggaetón", style: "geometric", palette: ["#1a1a3e", "#e63946", "#f4a261", "#2a9d8f"], badge: null },
+    { id: "el-mal-querer", title: "El Mal Querer", artist: "Rosalía", year: 2018, price: 9.99, was: 14.99, rating: 5.0, reviews: 256, genre: "Pop Latino", style: "minimal", palette: ["#edf2f4", "#1a1a1a", "#d90d2b", "#8d99ae"], badge: null },
   ];
 
   const artists = [

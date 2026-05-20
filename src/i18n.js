@@ -42,13 +42,13 @@ window.HM_I18N = {
     nuevos: { eyebrow: "Recién añadidos", title: "Novedades", sub: "Lo último que entró al estudio." },
     test: { eyebrow: "Lo que dicen", title: "+30.000 pedidos no mienten", sub: "Reseñas verificadas tras compra." },
     faq: { eyebrow: "FAQ", title: "Preguntas frecuentes", sub: "Si no encuentras la tuya, escríbenos." },
-    news: { eyebrow: "Suscríbete", title: "5% de descuento al unirte", sub: "Sin spam. Solo posters nuevos, ofertas y novedades.", placeholder: "tu@correo.com", cta: "Suscribirme" },
+    news: { eyebrow: "Suscríbete", title: "5% de descuento al unirte", sub: "Sin spam. Solo posters nuevos, ofertas y novedades.", placeholder: "contacto@tutienda.com", cta: "Suscribirme" },
     foot: {
       tagline: "Tu música favorita, convertida en arte para tu espacio.",
       shop: "Tienda", shopLinks: ["Catálogo", "Más vendidos", "Novedades", "Personalizados"],
       help: "Soporte", helpLinks: ["Cómo imprimir", "Tamaños", "Envíos digitales", "Contacto"],
       legal: "Legal", legalLinks: ["Términos", "Privacidad", "Reembolsos", "Aviso legal"],
-      copy: "© 2026 Hype Music Prints. Hecho con amor por la música."
+      copy: "© 2026 DropPrint Store. Plantilla de tienda de prints."
     },
     catalog: {
       title: "Explora todo el catálogo", sub: "+900 diseños listos para imprimir.",
@@ -69,7 +69,7 @@ window.HM_I18N = {
       summary: "Resumen", subtotal: "Subtotal", discount: "Descuento", total: "Total",
       promo: "Código promocional", apply: "Aplicar", checkout: "Finalizar compra",
       remove: "Quitar", item: "artículo", items: "artículos",
-      bonus: "Aplica HYPE5 para 5% extra"
+      bonus: "Aplica DROP5 para 5% extra"
     },
     checkout: {
       title: "Finalizar compra", sub: "Elige tu método de pago y completa tu dirección.",
@@ -118,13 +118,13 @@ window.HM_I18N = {
     nuevos: { eyebrow: "Just dropped", title: "New arrivals", sub: "Fresh out of the studio." },
     test: { eyebrow: "Word of mouth", title: "+30,000 orders don’t lie", sub: "Verified post-purchase reviews." },
     faq: { eyebrow: "FAQ", title: "Frequently asked", sub: "Can’t find yours? Write to us." },
-    news: { eyebrow: "Subscribe", title: "5% off when you join", sub: "No spam. Just new posters, drops and offers.", placeholder: "you@email.com", cta: "Subscribe" },
+    news: { eyebrow: "Subscribe", title: "5% off when you join", sub: "No spam. Just new posters, drops and offers.", placeholder: "contact@yourstore.com", cta: "Subscribe" },
     foot: {
       tagline: "Your favorite music, turned into art for your space.",
       shop: "Shop", shopLinks: ["Catalog", "Best sellers", "New arrivals", "Custom"],
       help: "Support", helpLinks: ["How to print", "Sizes", "Digital delivery", "Contact"],
       legal: "Legal", legalLinks: ["Terms", "Privacy", "Refunds", "Legal notice"],
-      copy: "© 2026 Hype Music Prints. Made with love for music."
+      copy: "© 2026 DropPrint Store. Print store template."
     },
     catalog: {
       title: "Browse the full catalog", sub: "900+ designs ready to print.",
@@ -145,7 +145,7 @@ window.HM_I18N = {
       summary: "Summary", subtotal: "Subtotal", discount: "Discount", total: "Total",
       promo: "Promo code", apply: "Apply", checkout: "Checkout",
       remove: "Remove", item: "item", items: "items",
-      bonus: "Use HYPE5 for an extra 5%"
+      bonus: "Use DROP5 for an extra 5%"
     },
     checkout: {
       title: "Checkout", sub: "Choose your payment method and complete your address.",

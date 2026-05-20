@@ -21,7 +21,17 @@ const SplashScreen = ({ onDone }) => {
       {/* Contenido central */}
       <div className="splash-content">
         <div className="splash-logo">
-          <img src="assets/hype-logo.png" alt="Hype Music Prints" />
+          <span style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 700,
+            fontSize: 38,
+            letterSpacing: "-0.04em",
+            color: "#edf2f4",
+            lineHeight: 1,
+          }}>
+            Drop<span style={{ color: "var(--accent)" }}>Print</span>
+            <span style={{ fontWeight: 400, fontSize: 20, color: "#8d99ae", marginLeft: 7, letterSpacing: "0.06em" }}>STORE</span>
+          </span>
         </div>
         <div className="splash-bar-wrap">
           <div className="splash-bar" />
@@ -116,11 +126,11 @@ const App = () => {
   const [{ route, arg }, navigate] = useHashRoute();
   const [splash, setSplash] = React.useState(true);
   const [cart, setCart] = useState(() => {
-    try { return JSON.parse(localStorage.getItem("hype-cart") || "[]"); } catch { return []; }
+    try { return JSON.parse(localStorage.getItem("drop-cart") || "[]"); } catch { return []; }
   });
   const [toast, setToast] = useState(null);
 
-  useEffect(() => { localStorage.setItem("hype-cart", JSON.stringify(cart)); }, [cart]);
+  useEffect(() => { localStorage.setItem("drop-cart", JSON.stringify(cart)); }, [cart]);
 
   // Sync language tweak with state
   const lang = tweaks.lang || "es";

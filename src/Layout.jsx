@@ -22,17 +22,25 @@ window.Icon = Icon;
 
 const Logo = ({ size = 40 }) => (
   <div className="nav-logo" style={{ gap: 0 }}>
-    <img
-      src="assets/hype-logo.png"
-      alt="Hype Music Prints"
-      style={{
-        height: size,
-        width: "auto",
-        mixBlendMode: "screen",
-        imageRendering: "auto",
-        display: "block",
-      }}
-    />
+    <span style={{
+      fontFamily: "'Space Grotesk', sans-serif",
+      fontWeight: 700,
+      fontSize: Math.round(size * 0.48),
+      letterSpacing: "-0.04em",
+      color: "var(--text)",
+      lineHeight: 1,
+      display: "inline-flex",
+      alignItems: "baseline",
+    }}>
+      Drop<span style={{ color: "var(--accent)" }}>Print</span>
+      <span style={{
+        fontWeight: 500,
+        fontSize: Math.round(size * 0.28),
+        color: "var(--muted)",
+        marginLeft: 5,
+        letterSpacing: "0.06em",
+      }}>STORE</span>
+    </span>
   </div>
 );
 window.Logo = Logo;
@@ -203,6 +211,28 @@ const Nav = ({ route, navigate, lang, setLang, cartCount, t, onSearchOpen }) => 
 
   return (
     <>
+      <div style={{
+        background: "repeating-linear-gradient(90deg,#0e0e0e 0,#0e0e0e 24px,#161616 24px,#161616 48px)",
+        borderBottom: "1px solid rgba(245,158,11,0.45)",
+        color: "#f59e0b",
+        textAlign: "center",
+        padding: "5px 16px",
+        fontSize: 10,
+        fontWeight: 700,
+        letterSpacing: "0.22em",
+        fontFamily: "'JetBrains Mono', monospace",
+        position: "sticky",
+        top: 0,
+        zIndex: 101,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 14,
+      }}>
+        <span style={{ opacity: 0.7 }}>▲</span>
+        DEMO — PLANTILLA DE EJEMPLO — NO ES UNA TIENDA REAL
+        <span style={{ opacity: 0.7 }}>▲</span>
+      </div>
       <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-row">
           {/* Logo */}
